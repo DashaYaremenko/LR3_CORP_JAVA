@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+    <title>Розрахунок ряду Тейлора</title>
+</head>
+   <f:view>
+       <h1>Розрахунок ряду Тейлора</h1>
+       <h:form>
+           <h:panelGrid columns="2" >
+               <h:outputLabel value="Введіть x:" />
+               <h:inputText value="#{calculate.x}" />
+
+               <h:outputLabel value="Введіть n:" />
+               <h:inputText value="#{calculate.n}" />
+
+               <h:outputLabel value="Введіть e1:" />
+               <h:inputText value="#{calculate.e1}" />
+
+               <h:outputLabel value="Введіть e2:" />
+               <h:inputText value="#{calculate.e2}" />
+           </h:panelGrid>
+
+           <h:commandButton value="Обчислити" action="#{calculate.calculate}" />
+
+           <h:panelGrid columns="2" styleClass="panel-grid-output">
+               <h:outputLabel value="Сума n доданків:" />
+               <h:outputText value="#{calculate.sumN}"  />
+
+               <h:outputLabel value="Сума доданків > e1:" />
+               <h:outputText value="#{calculate.sumE1}"  />
+
+               <h:outputLabel value="Кількість доданків > e1:" />
+               <h:outputText value="#{calculate.countE1}"  />
+
+               <h:outputLabel value="Сума доданків > e2:" />
+               <h:outputText value="#{calculate.sumE2}" />
+
+               <h:outputLabel value="Кількість доданків > e2:" />
+               <h:outputText value="#{calculate.countE2}"  />
+
+               <h:outputLabel value="Точне значення:" />
+               <h:outputText value="#{calculate.exactValue}"   />
+           </h:panelGrid>
+           <h:commandButton value="до 2 завдання" action="index2.xhtml" />
+       </h:form>
+   </f:view>
+</html>
