@@ -17,20 +17,16 @@ public class TabulateCalculate {
 
     public void tabulation() {
         results = new ArrayList<>();
-
-        // Перевірка вхідних даних
         if (a <= 0 || b <= 0 || h <= 0 || a > b) {
-            results.add(new Result(0, Double.NaN)); // Некоректні дані
+            results.add(new Result(0, Double.NaN));
             return;
         }
-
         for (double x = a; x <= b; x += h) {
             double y = Math.tan(Math.log(x));
             results.add(new Result(x, y));
         }
     }
 
-    // Внутрішній клас для збереження результатів
     public static class Result {
         private final double x;
         private final double y;
@@ -41,37 +37,28 @@ public class TabulateCalculate {
         }
 
         public double getX() {return x;}
-
         public double getY() {
             return y;
         }
     }
-
-    // Геттери і сеттери
     public double getA() {
         return a;
     }
-
     public void setA(double a) {
         this.a = a;
     }
-
     public double getB() {
         return b;
     }
-
     public void setB(double b) {
         this.b = b;
     }
-
     public double getH() {
         return h;
     }
-
     public void setH(double h) {
         this.h = h;
     }
-
     public List<Result> getResults() {
         return results;
     }
